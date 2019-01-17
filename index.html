@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<!--<script src="https://d3js.org/d3.v5.min.js"></script>-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+	 crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+	 crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js" integrity="sha256-qlku5J3WO/ehJpgXYoJWC2px3+bZquKChi4oIWrAKoI="
+	 crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	 crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/main.js"></script>
+
+</head>
+
+<body>
+	<header>
+		<!-- Image and text -->
+		<nav class="navbar navbar-light bg-light">
+			<a class="navbar-brand" href="#">
+				<img src="Img/logo.png" width="40" class="d-inline-block align-top" alt="">
+				Only California
+			</a>
+		</nav>
+	</header>
+	<main>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<select id="select">
+						<option value=" "> </option>
+					</select>
+					<div id="AQIbox">
+						<div>
+							<p id="hand">Scopri il fattore AQI, <br>indice di inqionamento dell'aria,<br> delle città della California...</p>
+							<!-- tentativo handlebards  
+									<script id="template" type="text/x-handlebars-template">
+									<p id="handText">Il fattore AQI di {{ city }} è : </p>
+									</script>
+								-->
+						</div>
+
+						<div id="SmileBox">
+							<div>
+								<h3 id="van"> </h3>
+							</div>
+							<div id="smileContainer">
+								<img id="img" src="">
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+				<div id="GraphicBox" class="col">
+
+					<!-- 				
+					<img src="Img/Colorato.png">
+				    -->
+				</div>
+			</div>
+
+		</div>
+	</main>
+	<footer>
+
+		<p>&copy; SC.2019</p>
+
+	</footer>
+</body>
+
+</html>

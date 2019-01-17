@@ -1,0 +1,97 @@
+body {
+    background-image: url("../Img/sotto.png");
+    background-size: contain;
+    background-position-y: 110%;
+    background-repeat: no-repeat;
+    background-color: #4B4A4A;
+}
+
+
+#smileContainer img {
+    height: 100px;
+}
+
+main {
+    margin-top: 100px;
+}
+
+footer{
+    margin-top: 160px;
+}
+
+footer p{
+    margin-left: 50px;
+    margin-bottom: 0px;
+    color: #909090;
+}
+
+#AQIbox {
+    margin-top: 60px;
+    background-color: rgba(0,0,0,0.3);
+    color: white;
+    width: 370px;
+    border-radius: 20px;
+}
+
+#AQIbox div{
+    margin-left: 30px;
+}
+
+#hand{
+    padding-top: 20px;
+    color: #909090 !important;
+    font-family: 'Lato', sans-serif;
+}
+
+#GraphicBox{
+    display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+#SmileBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.bg-light{
+    background-color: rgba(0,0,0,0) !important;
+  
+}
+
+#van{
+    font-size: 100px;
+    font-family: 'Lato', sans-serif;
+}
+
+.navbar-brand{
+    color: #909090 !important;
+    font-size: 30px;
+    font-family: 'Lato', sans-serif;
+}
+
+#select{
+    background-color: rgba(0,0,0,0.3) ;
+    color: white;
+    border-color: rgba(0,0,0,0) ;
+    border-radius: 5px;
+
+}
+
+#ac_path_3{
+    fill:  rgba(0,0,0,0);
+}
+
+#ac_layer_h{
+    display: none;
+}
+
+#GraphicBox{
+    height: 400px;
+}
+
+#ac_path_u{
+    color:  rgba(0,0,0,0);
+}
