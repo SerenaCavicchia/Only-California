@@ -34,46 +34,46 @@ $(function () {
 
 
 						// fonte: https://docs.anychart.com/Basic_Charts/Doughnut_Chart
-						
+
 						anychart.onDocumentReady(function () {
 
 							$("#GraphicBox").empty();
 
 							// create data
 							var data = [
-								
-							  {x: "AQI", value: aqi, normal:{fill:"#86DC8D"}, },
-							  {x: "Total", value: 100 - aqi, normal:{fill:"Gray"}, label:{fontColor: "rgba(0,0,0,0)"}},
+
+								{ x: "AQI", value: aqi, normal: { fill: "#86DC8D" }, },
+								{ x: "Total", value: 100 - aqi, normal: { fill: "Gray" }, label: { fontColor: "rgba(0,0,0,0)" } },
 							];
-						
+
 							// create a pie chart and set the data
 							var chart = anychart.pie(data);
-							
-							
+
+
 
 							/* set the inner radius
 							(to turn the pie chart into a doughnut chart)*/
 							chart.background().fill("transparent");
 
 							data.fill("red");
-						    data.fill("Gray");
-							
+							data.fill("Gray");
+
 							chart.innerRadius("40%");
-							
-						
+
+
 							// set the container id
 							chart.container("GraphicBox");
 
 
-												
+
 							// initiate drawing the chart
 							chart.draw();
 
-							
+
 						});
 
-						
-					
+
+
 
 						//if per l'svg
 						if (aqi <= 50) {
@@ -81,9 +81,6 @@ $(function () {
 							document.getElementById("van").innerHTML = aqi;
 							document.getElementById("van").style.color = "#86DC8D";
 							document.getElementById("hand").innerHTML = "Il fattore AQI di " + res.data.city + " è:";
-							
-							
-
 
 						}
 						else if (aqi > 50 && aqi < 60) {
@@ -91,7 +88,43 @@ $(function () {
 							document.getElementById("van").innerHTML = aqi;
 							document.getElementById("van").style.color = "#E2A700";
 							document.getElementById("hand").innerHTML = "Il fattore AQI di " + res.data.city + " è:";
-							
+							anychart.onDocumentReady(function () {
+
+								$("#GraphicBox").empty();
+	
+								// create data
+								var data = [
+	
+									{ x: "AQI", value: aqi, normal: { fill: "#E2A700" }, },
+									{ x: "Total", value: 100 - aqi, normal: { fill: "Gray" }, label: { fontColor: "rgba(0,0,0,0)" } },
+								];
+	
+								// create a pie chart and set the data
+								var chart = anychart.pie(data);
+	
+	
+	
+								/* set the inner radius
+								(to turn the pie chart into a doughnut chart)*/
+								chart.background().fill("transparent");
+	
+								data.fill("red");
+								data.fill("Gray");
+	
+								chart.innerRadius("40%");
+	
+	
+								// set the container id
+								chart.container("GraphicBox");
+	
+	
+	
+								// initiate drawing the chart
+								chart.draw();
+	
+	
+							});
+
 						}
 						else if (aqi > 60 && aqi <= 500) {
 							document.getElementById('img').setAttribute('src', "SVG/smileR.svg");
@@ -99,6 +132,44 @@ $(function () {
 							document.getElementById("van").style.color = "#EF4244";
 							document.getElementById("hand").innerHTML = "Il fattore AQI di " + res.data.city + " è:";
 							
+						anychart.onDocumentReady(function () {
+
+							$("#GraphicBox").empty();
+
+							// create data
+							var data = [
+
+								{ x: "AQI", value: aqi, normal: { fill: "#EF4244" }, },
+								{ x: "Total", value: 100 - aqi, normal: { fill: "Gray" }, label: { fontColor: "rgba(0,0,0,0)" } },
+							];
+
+							// create a pie chart and set the data
+							var chart = anychart.pie(data);
+
+
+
+							/* set the inner radius
+							(to turn the pie chart into a doughnut chart)*/
+							chart.background().fill("transparent");
+
+							data.fill("red");
+							data.fill("Gray");
+
+							chart.innerRadius("40%");
+
+
+							// set the container id
+							chart.container("GraphicBox");
+
+
+
+							// initiate drawing the chart
+							chart.draw();
+
+
+						});
+
+
 						}
 					}
 				)
