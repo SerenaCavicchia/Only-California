@@ -41,19 +41,22 @@ $(function () {
 
 							// create data
 							var data = [
-							  {x: "A", value: aqi},
-							  {x: "B", value: 100 - aqi},
+								
+							  {x: "AQI", value: aqi, normal:{fill:"#86DC8D"}, },
+							  {x: "Total", value: 100 - aqi, normal:{fill:"Gray"}, label:{fontColor: "rgba(0,0,0,0)"}},
 							];
 						
 							// create a pie chart and set the data
 							var chart = anychart.pie(data);
-							data.normal().fill("#00cc99", 0.3);
 							
 							
 
 							/* set the inner radius
 							(to turn the pie chart into a doughnut chart)*/
 							chart.background().fill("transparent");
+
+							data.fill("red");
+						    data.fill("Gray");
 							
 							chart.innerRadius("40%");
 							
@@ -61,17 +64,16 @@ $(function () {
 							// set the container id
 							chart.container("GraphicBox");
 
+
 												
 							// initiate drawing the chart
 							chart.draw();
 
-						   //bisogna eliminare il chart attuale e disegnarne uno nuovo per evitare che si sovrappongano
 							
 						});
 
 						
-						
-						//crea funzione del grafico, con documen. ecc.. elimini la funzione al clik di un nuovo select e ppoi riavii(callback)
+					
 
 						//if per l'svg
 						if (aqi <= 50) {
@@ -79,6 +81,7 @@ $(function () {
 							document.getElementById("van").innerHTML = aqi;
 							document.getElementById("van").style.color = "#86DC8D";
 							document.getElementById("hand").innerHTML = "Il fattore AQI di " + res.data.city + " è:";
+							
 							
 
 

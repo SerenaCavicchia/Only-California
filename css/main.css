@@ -84,14 +84,8 @@ footer p{
     fill:  rgba(0,0,0,0);
 }
 
-#ac_layer_h{
-    display: none;
-}
 
 #GraphicBox{
     height: 400px;
 }
 
-#ac_path_u{
-    color:  rgba(0,0,0,0);
-}
