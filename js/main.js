@@ -76,14 +76,14 @@ $(function () {
 
 
 						//if per l'svg
-						if (aqi <= 50) {
+						if (aqi <= 30) {
 							document.getElementById('img').setAttribute('src', "SVG/smileG.svg");
 							document.getElementById("van").innerHTML = aqi;
 							document.getElementById("van").style.color = "#86DC8D";
 							document.getElementById("hand").innerHTML = "Il fattore AQI di " + res.data.city + " è:";
 
 						}
-						else if (aqi > 50 && aqi < 60) {
+						else if (aqi > 30 && aqi < 60) {
 							document.getElementById('img').setAttribute('src', "SVG/smileY.svg");
 							document.getElementById("van").innerHTML = aqi;
 							document.getElementById("van").style.color = "#E2A700";
