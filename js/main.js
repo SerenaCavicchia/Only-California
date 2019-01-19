@@ -59,6 +59,7 @@ $(function () {
 								// raggio interno per forma a ciambella
 								chart.innerRadius("40%");
 
+
 								// set the container id
 								chart.container("GraphicBox");
 
@@ -174,9 +175,6 @@ $(function () {
 
 									// raggio interno per forma a ciambella
 									chart.innerRadius("40%");
-
-									//dimenzioni
-									chart.title()
 
 									// set the container id
 									chart.container("GraphicBox");
