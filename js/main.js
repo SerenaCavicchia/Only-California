@@ -12,14 +12,6 @@ $(function () {
 				$("#select").append(t(el));
 			})
 
-			/*var source = $("#template").html();
-			var template = Handlebars.compile(source);
-
-			res.data.forEach(function (el1) {
-				$("#handText").append(template(el1));
-			})*/
-
-
 
 			$("#select").change(function () {
 
@@ -33,45 +25,49 @@ $(function () {
 						console.log(aqi);
 
 
-						// fonte: https://docs.anychart.com/Basic_Charts/Doughnut_Chart
 
-						anychart.onDocumentReady(function () {
+						// temporizzo il grafico
 
-							$("#GraphicBox").empty();
+						var myVar = setTimeout(grafico, 2000);
 
-							// create data
-							var data = [
+						function grafico() {
 
-								{ x: "AQI", value: aqi, normal: { fill: "#86DC8D" }, },
-								{ x: "Total", value: 100 - aqi, normal: { fill: "Gray" }, label: { fontColor: "rgba(0,0,0,0)" } },
-							];
+							//Creo il grafico - fonte: https://docs.anychart.com/Basic_Charts/Doughnut_Chart
+							anychart.onDocumentReady(function () {
 
-							// create a pie chart and set the data
-							var chart = anychart.pie(data);
+								/*ho provato a impostare il colore del grafico con una variabile in modo da poterlo 
+								scrivere soltanto una volta e 
+								modificare solo la variabile in if ma non ha funzionato
+								let colorgraph = "#86DC8D"*/
+
+								$("#GraphicBox").empty();
+
+								// create data
+								var data = [
+
+									{ x: "AQI", value: aqi, normal: { fill: "#86DC8D" }, },
+									{ x: "Total", value: 100 - aqi, normal: { fill: "rgba(0,0,0,0.3)" }, label: { fontColor: "rgba(0,0,0,0)" } },
+								];
+
+								// create a pie chart and set the data
+								var chart = anychart.pie(data);
+
+								/* set the inner radius
+								(to turn the pie chart into a doughnut chart)*/
+								chart.background().fill("transparent");
+
+								// raggio interno per forma a ciambella
+								chart.innerRadius("40%");
+
+								// set the container id
+								chart.container("GraphicBox");
+
+								// initiate drawing the chart
+								chart.draw();
 
 
-
-							/* set the inner radius
-							(to turn the pie chart into a doughnut chart)*/
-							chart.background().fill("transparent");
-
-							data.fill("red");
-							data.fill("Gray");
-
-							chart.innerRadius("40%");
-
-
-							// set the container id
-							chart.container("GraphicBox");
-
-
-
-							// initiate drawing the chart
-							chart.draw();
-
-
-						});
-
+							});
+						}
 
 
 
@@ -81,6 +77,7 @@ $(function () {
 							document.getElementById("van").innerHTML = aqi;
 							document.getElementById("van").style.color = "#86DC8D";
 							document.getElementById("hand").innerHTML = "Il fattore AQI di " + res.data.city + " è:";
+							//colorgraph = "#86DC8D"
 
 						}
 						else if (aqi > 30 && aqi < 60) {
@@ -88,42 +85,52 @@ $(function () {
 							document.getElementById("van").innerHTML = aqi;
 							document.getElementById("van").style.color = "#E2A700";
 							document.getElementById("hand").innerHTML = "Il fattore AQI di " + res.data.city + " è:";
-							anychart.onDocumentReady(function () {
+							//colorgraph = "#E2A700";
 
-								$("#GraphicBox").empty();
-	
-								// create data
-								var data = [
-	
-									{ x: "AQI", value: aqi, normal: { fill: "#E2A700" }, },
-									{ x: "Total", value: 100 - aqi, normal: { fill: "Gray" }, label: { fontColor: "rgba(0,0,0,0)" } },
-								];
-	
-								// create a pie chart and set the data
-								var chart = anychart.pie(data);
-	
-	
-	
-								/* set the inner radius
-								(to turn the pie chart into a doughnut chart)*/
-								chart.background().fill("transparent");
-	
-								data.fill("red");
-								data.fill("Gray");
-	
-								chart.innerRadius("40%");
-	
-	
-								// set the container id
-								chart.container("GraphicBox");
-	
-	
-	
-								// initiate drawing the chart
-								chart.draw();
-	
-	
-							});
+
+							//grafico con colore giallo
+							// temporizzo il grafico
+
+							var myVar = setTimeout(grafico, 2000);
+
+							function grafico() {
+
+								//Creo il grafico - fonte: https://docs.anychart.com/Basic_Charts/Doughnut_Chart
+								anychart.onDocumentReady(function () {
+
+									/*ho provato a impostare il colore del grafico con una variabile in modo da poterlo 
+									scrivere soltanto una volta e 
+									modificare solo la variabile in if ma non ha funzionato
+									let colorgraph = "#86DC8D"*/
+
+									$("#GraphicBox").empty();
+
+									// create data
+									var data = [
+
+										{ x: "AQI", value: aqi, normal: { fill: "#E2A700" }, },
+										{ x: "Total", value: 100 - aqi, normal: { fill: "rgba(0,0,0,0.3)" }, label: { fontColor: "rgba(0,0,0,0)" } },
+									];
+
+									// create a pie chart and set the data
+									var chart = anychart.pie(data);
+
+									/* set the inner radius
+									(to turn the pie chart into a doughnut chart)*/
+									chart.background().fill("transparent");
+
+									// raggio interno per forma a ciambella
+									chart.innerRadius("40%");
+
+									// set the container id
+									chart.container("GraphicBox");
+
+									// initiate drawing the chart
+									chart.draw();
+
+
+								});
+							}
 
 						}
 						else if (aqi > 60 && aqi <= 500) {
@@ -131,45 +138,55 @@ $(function () {
 							document.getElementById("van").innerHTML = aqi;
 							document.getElementById("van").style.color = "#EF4244";
 							document.getElementById("hand").innerHTML = "Il fattore AQI di " + res.data.city + " è:";
-							
-						anychart.onDocumentReady(function () {
-
-							$("#GraphicBox").empty();
-
-							// create data
-							var data = [
-
-								{ x: "AQI", value: aqi, normal: { fill: "#EF4244" }, },
-								{ x: "Total", value: 100 - aqi, normal: { fill: "Gray" }, label: { fontColor: "rgba(0,0,0,0)" } },
-							];
-
-							// create a pie chart and set the data
-							var chart = anychart.pie(data);
+							colorgraph = "#EF4244";
 
 
+							//grafico con il rosso
+							// temporizzo il grafico
 
-							/* set the inner radius
-							(to turn the pie chart into a doughnut chart)*/
-							chart.background().fill("transparent");
+							var myVar = setTimeout(grafico, 2000);
 
-							data.fill("red");
-							data.fill("Gray");
+							function grafico() {
 
-							chart.innerRadius("40%");
+								//Creo il grafico - fonte: https://docs.anychart.com/Basic_Charts/Doughnut_Chart
+								anychart.onDocumentReady(function () {
+
+									/*ho provato a impostare il colore del grafico con una variabile in modo da poterlo 
+									scrivere soltanto una volta e 
+									modificare solo la variabile in if ma non ha funzionato
+									let colorgraph = "#86DC8D"*/
+
+									$("#GraphicBox").empty();
+
+									// create data
+									var data = [
+
+										{ x: "AQI", value: aqi, normal: { fill: "#EF4244" }, },
+										{ x: "Total", value: 100 - aqi, normal: { fill: "rgba(0,0,0,0.3)" }, label: { fontColor: "rgba(0,0,0,0)" } },
+									];
+
+									// create a pie chart and set the data
+									var chart = anychart.pie(data);
+
+									/* set the inner radius
+									(to turn the pie chart into a doughnut chart)*/
+									chart.background().fill("transparent");
+
+									// raggio interno per forma a ciambella
+									chart.innerRadius("40%");
+
+									//dimenzioni
+									chart.title()
+
+									// set the container id
+									chart.container("GraphicBox");
+
+									// initiate drawing the chart
+									chart.draw();
 
 
-							// set the container id
-							chart.container("GraphicBox");
-
-
-
-							// initiate drawing the chart
-							chart.draw();
-
-
-						});
-
-
+								});
+							}
 						}
 					}
 				)
