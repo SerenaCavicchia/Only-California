@@ -11,7 +11,7 @@ $(function () {
 
 			res.data.forEach(function (el) {
 				$("#select").append(t(el));
-			})
+			});
 
 
 			$("#select").change(function () {

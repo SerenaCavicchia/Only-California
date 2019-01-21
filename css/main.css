@@ -1,28 +1,73 @@
 body {
-    background-image: url("../Img/sotto.png");
+    background-image: url("../Img/cloud.png");
     background-size: contain;
     background-position-y: 100%;
     background-repeat: no-repeat;
     background-color: #4B4A4A;
 }
 
-
-#smileContainer img {
-    height: 100px;
+header{
+    background-image: url("../Img/sfondo.png");
+    background-size: cover;
+    background-position: center;
+    height: 100vh ;
 }
 
 main {
-    margin-top: 62px;
+    margin-top: 67px;
 }
 
 footer{
     margin-top: 160px;
+    margin-bottom: 5px;
+    display: flex;
+    color: #909090;
 }
 
 footer p{
     margin-left: 50px;
     margin-bottom: 0px;
-    color: #909090;
+
+}
+
+#Scroll img{
+    width: 40px;
+}
+
+#Scroll{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#PosizioneS{
+    display: flex;
+    align-items: center;
+    height: 70vh;
+}
+#scrittaSfondo{
+    display: flex;
+    align-items: baseline;
+    margin-left: 10%;
+    width: 100%;
+}
+
+#scrittaSfondo h1{
+    color: #86DC8D;
+    font-size: 100px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+#scrittaSfondo p{
+    color: #86DC8D;
+    font-size: 40px;
+    margin-left: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+#smileContainer img {
+    height: 100px;
+    font-family: 'Lato', sans-serif;
 }
 
 #AQIbox {
@@ -31,6 +76,7 @@ footer p{
     color: white;
     width: 370px;
     border-radius: 20px;
+    font-family: 'Lato', sans-serif;
 }
 
 #AQIbox div{
@@ -67,10 +113,11 @@ footer p{
 }
 
 .navbar-brand{
-    color: #909090 !important;
+    color: #c0c0c0 !important;
     font-size: 30px;
     font-family: 'Lato', sans-serif;
 }
+
 
 #select{
     background-color: rgba(0,0,0,0.3) ;
@@ -119,6 +166,18 @@ footer p{
         margin-top: 50px;
     }
    
+  }
+
+  @media(max-width:540px){
+    
+    #scrittaSfondo{
+        display: flex;
+        flex-direction: column; 
+    }
+
+    #scrittaSfondo p{
+      margin: 0px;
+    }
   }
 
   @media (max-width: 390px) {
