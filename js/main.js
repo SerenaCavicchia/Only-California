@@ -21,6 +21,7 @@ $(function () {
 					"https://api.airvisual.com/v2/city?city=" + document.getElementById('select').value + "&state=California&country=USA&key=bc4bXu4aZde54gJts",
 					function (res) {
 						console.log(res);
+						
 						document.getElementById("loader").style.display = "block";
 
 						let aqi = res.data.current.pollution.aqius

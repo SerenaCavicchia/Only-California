@@ -1,10 +1,26 @@
 body {
     background-image: url("../Img/cloud.png");
     background-size: contain;
-    background-position-y: 100%;
+    background-position-y: 130%;
     background-repeat: no-repeat;
     background-color: #4B4A4A;
+    -webkit-animation-name: MOVE-BG;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
 }
+
+@-webkit-keyframes MOVE-BG {
+    from {
+        background-position-y: 130%; 
+           
+     }
+    to { 
+        background-position-y: 100%;
+
+    }
+}
+
 
 header{
     background-image: url("../Img/sfondo.png");
@@ -55,14 +71,14 @@ footer p{
 #scrittaSfondo h1{
     color: #86DC8D;
     font-size: 100px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
 }
 
 #scrittaSfondo p{
     color: #86DC8D;
     font-size: 40px;
     margin-left: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
 }
 
 #smileContainer img {
